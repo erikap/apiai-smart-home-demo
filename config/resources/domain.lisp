@@ -9,6 +9,6 @@
   :class (s-prefix "demo:Thermostat")
   :properties `((:temperature :number ,(s-prefix "demo:temperature"))
                 (:location :string ,(s-prefix "demo:location")))
-  :resource-base (s-url "http://apiai-demo.narato.be/id/thermostats/")
+  :resource-base (s-url "http://apiaidemo.narato.be/id/thermostats/")
   :on-path "thermostats")
 
