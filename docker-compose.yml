@@ -39,6 +39,4 @@ apiai:
     APIAI_ACCESS_TOKEN: "asecrettoken"
   links:
     - db:database
-  volumes:
-    - ./mu-apiai-service:/app
 
