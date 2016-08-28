@@ -1,0 +1,15 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1:	<http://mu.semte.ch/vocabularies/ext/apiai-demo/> .
+<http://apiaidemo.narato.be/id/thermostats/57C2AD7922FB780009000001>	rdf:type	ns1:Thermostat .
+@prefix ns2:	<http://mu.semte.ch/vocabularies/core/> .
+<http://apiaidemo.narato.be/id/thermostats/57C2AD7922FB780009000001>	ns2:uuid	"57C2AD7922FB780009000001" ;
+	ns1:temperature	19 ;
+	ns1:location	"living room" .
+<http://apiaidemo.narato.be/id/thermostats/57C2AD7D22FB780009000002>	rdf:type	ns1:Thermostat ;
+	ns2:uuid	"57C2AD7D22FB780009000002" ;
+	ns1:temperature	15 ;
+	ns1:location	"kitchen" .
+<http://apiaidemo.narato.be/id/thermostats/57C2AD8022FB780009000003>	rdf:type	ns1:Thermostat ;
+	ns2:uuid	"57C2AD8022FB780009000003" ;
+	ns1:temperature	6 ;
+	ns1:location	"bedroom" .
