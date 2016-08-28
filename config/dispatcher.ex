@@ -12,11 +12,11 @@ defmodule Dispatcher do
   plug :match
   plug :dispatch
 
-  match "/thermostats/*path" do
+  match "/api/thermostats/*path" do
     Proxy.forward conn, path, "http://resource/thermostats/"
   end
 	
-  match "/apiai/*path" do
+  match "/api/apiai/*path" do
     Proxy.forward conn, path, "http://apiai/"
   end
 	
