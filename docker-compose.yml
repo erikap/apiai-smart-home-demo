@@ -1,0 +1,39 @@
+identifier:
+  image: semtech/mu-identifier:1.0.0
+  links:
+    - dispatcher:dispatcher
+  ports:
+    - "80:80"
+dispatcher:
+  image: semtech/mu-dispatcher:1.0.1
+  links:
+    - resource:resource
+    - apiai:apiai
+  volumes:
+    - ./config:/config
+db:
+  image: tenforce/virtuoso:1.0.0-virtuoso7.2.4
+  environment:
+    SPARQL_UPDATE: "true"
+  ports:
+    - "8890:8890"
+  volumes:
+    - ./virtuoso:/data
+resource:
+  image: semtech/mu-cl-resources:1.12.4
+  links:
+    - db:database
+  volumes:
+    - ./config/resources:/config
+apiai:
+  image: tmp/mu-apiai-service
+  environment:
+    NODE_ENV: "development"
+    APIAI_ACCESS_TOKEN: "asecrettoken"
+  links:
+    - db:database
+  volumes:
+    - ./mu-apiai-service:/app
+  ports:
+    - "3000:80"
+
