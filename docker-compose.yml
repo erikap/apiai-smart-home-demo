@@ -1,9 +1,17 @@
+frontend:
+  image: erikap/nginx-ember-proxy
+  links:
+    - identifier:backend
+  ports:
+    - "80:80"
+  volumes:
+    - ./smart-home-frontend/dist:/usr/share/nginx/html
 identifier:
   image: semtech/mu-identifier:1.0.0
   links:
     - dispatcher:dispatcher
-  ports:
-    - "80:80"
+  # ports:
+  #   - "80:80"
 dispatcher:
   image: semtech/mu-dispatcher:1.0.1
   links:
@@ -26,14 +34,11 @@ resource:
   volumes:
     - ./config/resources:/config
 apiai:
-  image: tmp/mu-apiai-service
+  image: erikap/mu-apiai-thermostat-service
   environment:
-    NODE_ENV: "development"
     APIAI_ACCESS_TOKEN: "asecrettoken"
   links:
     - db:database
   volumes:
     - ./mu-apiai-service:/app
-  ports:
-    - "3000:80"
 
