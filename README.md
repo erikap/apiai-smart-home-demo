@@ -8,6 +8,7 @@ Update the `APIAI_ACCESS_TOKEN` environment variable in the `apiai` service in `
 ## Running the application
 ```
 git clone https://github.com/erikap/apiai-smart-home-demo.git
+wget https://github.com/erikap/apiai-smart-home-frontend/releases/download/v0.1.0/dist.zip && unzip dist.zip && mkdir -p smart-home-frontend && mv dist smart-home-frontend/dist
 cd apiai-smart-home-demo
 docker-compose up -d
 ```
